@@ -18,7 +18,7 @@ class ModelLoader:
         
         base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
         model_path = os.path.join(base_dir, 'models', 'power_consumption_model.pkl')
-        scaler_path = os.path.join(base_dir, 'models', 'scaler.pkl')
+        scaler_path =    os.path.join(base_dir, 'models', 'scaler.pkl')
         
         
         print(f"Looking for model at: {model_path}")
