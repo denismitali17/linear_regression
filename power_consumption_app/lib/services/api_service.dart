@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/prediction_model.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://127.0.0.1:8002'; 
+  static const String baseUrl = 'http://192.168.1.70:8000';
 
   Future<double> predictConsumption(PredictionModel prediction) async {
     final url = Uri.parse('$baseUrl/predict');
