@@ -3,9 +3,6 @@
 ##  Mission: Smart Resource Management for a Sustainable Future
 In a world where energy efficiency is not just an option but a necessity, my mission is to harness the power of data science to optimize energy consumption in Tétouan, Morocco. By predicting power usage patterns with high accuracy, we empower city planners and energy providers to make data-driven decisions that reduce waste, lower costs, and contribute to a more sustainable urban future.
 
-##  Project Overview
-This project leverages machine learning to predict power consumption across Tétouan's three distribution zones (Quads, Smir, and Boussafou), using historical energy and weather data collected every 10 minutes.
-
 ###  Key Objectives
 - Predict power consumption with over 97% accuracy  
 - Identify key factors influencing energy usage  
@@ -48,6 +45,12 @@ power-consumption-api/
 
 ##  Getting Started
 
+# API Endpoint
+Public URL: https://power-consumption-api-pavh.onrender.com/docs#/default/predict_predict_post
+
+# Youtube Video
+Link: https://youtu.be/BLVcfFaVjME
+
 ### Prerequisites
 - Python 3.8+  
 - pip (Python package manager)  
@@ -60,7 +63,7 @@ cd power-consumption-api
 
 # Create and activate virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  
 
 # Install dependencies
 pip install -r requirements.txt
@@ -76,15 +79,15 @@ model = joblib.load('app/models/power_consumption_model.joblib')
 scaler = joblib.load('app/models/scaler.pkl')
 
 # Example input
-input_data = {
-    'Temperature': 25.5,
-    'Humidity': 60.0,
-    'WindSpeed': 10.0,
-    'GeneralDiffuseFlows': 0.5,
-    'DiffuseFlows': 0.3,
-    'Hour': 14,
-    'DayOfWeek': 2,  
-    'Month': 6
+{
+  "Temperature": 25.5,
+  "Humidity": 60.0,
+  "WindSpeed": 10.0,
+  "GeneralDiffuseFlows": 0.5,
+  "DiffuseFlows": 0.3,
+  "Hour": 14,
+  "DayOfWeek": 2,
+  "Month": 6
 }
 
 # Preprocess and predict
@@ -110,8 +113,6 @@ response = requests.post(url, json=input_data)
 print(response.json())
 ```
 
-# Youtube Video
-Link: https://youtu.be/BLVcfFaVjME
 
 ##  Results & Insights
 **Best Performing Model**: Random Forest Regressor (R² = 0.98)
